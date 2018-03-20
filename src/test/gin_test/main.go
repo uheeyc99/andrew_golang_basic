@@ -24,6 +24,7 @@ func test(){
 	gin.SetMode(gin.DebugMode)
 	router:=gin.Default()
 
+
 	router.LoadHTMLGlob("templates/*")
 	router.Static("/assets","./assets")
 	router.StaticFS("/more_static", http.Dir("my_file_system"))
