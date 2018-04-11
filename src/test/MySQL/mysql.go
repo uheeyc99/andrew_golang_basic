@@ -7,12 +7,12 @@ import (
 )
 
 func test(){
-	fmt.Println("aaaq")
-	db,err:=sql.Open("mysql","root:123456789@tcp(qycam.com:50201)/test?charset=utf8")
+	//fmt.Println("aaaq")
+	db,err:=sql.Open("mysql","aiden:123456@tcp(10.10.3.227)/andrew?charset=utf8")
 	if err !=nil{
 		fmt.Printf("Open database error: %s\n",err)
 	}
-	//defer db.Close()
+	defer db.Close()
 	err=db.Ping()
 	if err!=nil{
 		fmt.Println("Ping err",err)
@@ -22,7 +22,9 @@ func test(){
 }
 
 func main(){
-
-	test()
+	for i:=0;i<1000000;i++{
+		test()
+	}
+	fmt.Println("finished")
 
 }
