@@ -6,7 +6,7 @@ import (
 	"fmt"
 )
 
-var try_port int = 50203
+var try_port int = 3389
 
 func try_pc(ip_str string){
 	conn,err:=net.Dial("tcp",ip_str+":"+strconv.Itoa(try_port))
@@ -35,5 +35,5 @@ func try_pc(ip_str string){
 }
 
 func main()  {
-	try_pc("qycam.com")
+	try_pc("10.10.3.228")
 }
