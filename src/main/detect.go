@@ -33,7 +33,7 @@ func detect_one(ip_str string,port_int int,ch chan  int){
 
 func detect(ip_str string)  {
 	//fmt.Println("detecting:",ip_str)
-	for port:=21;port<=32;port++{
+	for port:=1;port<=65535;port++{
 		ch:=make(chan int,50)
 		ch <-1
 		w.Add(1)
