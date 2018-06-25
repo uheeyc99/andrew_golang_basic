@@ -9,7 +9,7 @@ import (
 func run_redis(){
 
 
-	c,e:=redis.Dial("tcp","qycam.com:50202")
+	c,e:=redis.Dial("tcp","10.10.3.227:6379")
 	if e!=nil{
 		fmt.Println(e)
 		return
@@ -33,8 +33,8 @@ func run_redis(){
 	if err!=nil {
 		fmt.Println(err)
 	}
-	_,err=redis.String(c.Do("get","color1"))
-//fmt.Println("get value:",v)
+	v,err:=redis.String(c.Do("get","color1"))
+	fmt.Println("get value:",v)
 
 
 
